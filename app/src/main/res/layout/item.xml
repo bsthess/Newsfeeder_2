@@ -1,74 +1,68 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:orientation="horizontal"
-    android:paddingEnd="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingStart="16dp">
+    android:layout_height="85dp">
 
+    <ImageView
+        android:id="@+id/imageFromUrl"
+        android:layout_width="110dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ball" />
 
+    <TextView
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        >
-
-        <TextView
-            android:id="@+id/section_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:fontFamily="sans-serif-medium"
-            android:maxLines="1"
-            android:textAllCaps="true"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="12sp"
-            tools:text="SECTION" />
-
-        <TextView
-            android:id="@+id/title_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp"
-            tools:text="ARticle title ................................" />
-
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/section_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:orientation="vertical">
+        android:layout_alignTop="@+id/imageFromUrl"
+        android:layout_toRightOf="@+id/imageFromUrl"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="true"
+        android:textColor="@color/Orange"
+        android:textSize="12sp"
+        android:textStyle="italic|bold"
+        tools:text="SECTION" />
 
-        <TextView
-            android:id="@+id/date_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="12sp"
-            tools:text="date published" />
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/section_text_view"
+        android:layout_below="@+id/section_text_view"
+        android:maxLines="2"
+        android:textColor="@color/DarkBlue"
+        android:textSize="16sp"
+        tools:text="ARticle title ...." />
 
-        <TextView
-            android:id="@+id/contributor_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="12sp"
-            tools:text="Contributor" />
+    <TextView
+        android:id="@+id/contributor_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imageFromUrl"
+        android:layout_alignLeft="@id/title_text_view"
+        android:layout_below="@id/title_text_view"
+        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="10sp"
+        android:textStyle="italic|bold"
+        tools:text="Contributor" />
 
-    </LinearLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/title_text_view"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="10sp"
+        android:textStyle="bold|italic"
+        tools:text="date published" />
+
+</RelativeLayout>

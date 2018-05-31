@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">News feeder</string>
     <string name="no_news">Currently we have no news</string>
+    <string name="no_internet">NO INTERNET CONNECTION</string>
 </resources>
