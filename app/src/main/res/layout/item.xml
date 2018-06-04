@@ -4,13 +4,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="85dp">
+    android:layout_height="@dimen/layoutHeight">
 
     <ImageView
+
         android:id="@+id/imageFromUrl"
-        android:layout_width="110dp"
-        android:layout_height="80dp"
-        android:layout_marginRight="5dp"
+        android:layout_width="@dimen/imageWidth"
+        android:layout_height="@dimen/imageHeight"
+        android:layout_marginRight="@dimen/margin5"
         android:src="@drawable/ball" />
 
     <TextView
@@ -30,7 +31,7 @@
     <TextView
         android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/articleHeight"
         android:layout_alignLeft="@+id/section_text_view"
         android:layout_below="@+id/section_text_view"
         android:maxLines="2"
@@ -45,8 +46,8 @@
         android:layout_alignBottom="@id/imageFromUrl"
         android:layout_alignLeft="@id/title_text_view"
         android:layout_below="@id/title_text_view"
-        android:layout_margin="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_margin="@dimen/margin5"
+        android:layout_marginTop="@dimen/margin5"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="10sp"
         android:textStyle="italic|bold"
@@ -58,8 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@id/title_text_view"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/margin5"
+        android:layout_marginTop="@dimen/margin5"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="10sp"
         android:textStyle="bold|italic"

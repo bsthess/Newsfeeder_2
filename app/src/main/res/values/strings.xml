@@ -2,4 +2,31 @@
     <string name="app_name">News feeder</string>
     <string name="no_news">Currently we have no news</string>
     <string name="no_internet">NO INTERNET CONNECTION</string>
+    <string name="article_image">ARTICLE IMAGE</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">Article Settings</string>
+
+    <!-- Strings For section Preference [CHAR LIMIT=30] -->
+    <string name="settings_SECTION_label">Select news section</string>
+    <string name="settings_SECTION_key" translatable="false">section</string>
+    <string name="settings_section_default" translatable="false">@string/settings_section_football_value</string>
+
+    <!-- Label for select football option [CHAR LIMIT=20] -->
+    <string name="settings_section_football_label">FOOTBALL</string>
+    <string name="settings_section_football_value" translatable="false">football</string>
+
+    <!-- Label for select politics option [CHAR LIMIT=20] -->
+    <string name="settings_section_politics_label">POLITICS</string>
+    <string name="settings_section_politics_value" translatable="false">politics</string>
+
+    <!-- Label for select business option [CHAR LIMIT=20] -->
+    <string name="settings_section_business_label">BUSINESS</string>
+    <string name="settings_section_business_value" translatable="false">business</string>
+
+
+    <!-- Label for select environment option [CHAR LIMIT=20] -->
+    <string name="settings_section_environment_label">ENVIRONMENT</string>
+    <string name="settings_section_environment_value" translatable="false">environment</string>
+   <!-- URL initial <string name="https://content.guardianapis.com/search?section=football&order-by=newest&show-elements=image&show-fields=byline%2Cthumbnail&page=1&page-size=10&api-key=test"
+-->
 </resources>
