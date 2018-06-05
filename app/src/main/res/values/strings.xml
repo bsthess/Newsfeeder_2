@@ -5,11 +5,53 @@
     <string name="article_image">ARTICLE IMAGE</string>
     <string name="settings_menu_item">Settings</string>
     <string name="settings_title">Article Settings</string>
+    <string name="the_guardian">The Guardian</string>
+    <!--Strings for keyword Preference -->
+    <string name="settings_keyword_label">SEARCH FOR A KEYWORD</string>
+    <string name="settings_keyword_key" translatable="false">keyword</string>
+    <string name="settings_keyword_default" translatable="false"></string>
 
     <!-- Strings For section Preference [CHAR LIMIT=30] -->
     <string name="settings_SECTION_label">Select news section</string>
     <string name="settings_SECTION_key" translatable="false">section</string>
-    <string name="settings_section_default" translatable="false">@string/settings_section_football_value</string>
+    <string name="settings_section_default" translatable="false">@string/settings_section_world_value</string>
+
+    <!-- Strings For orderBy Preference [CHAR LIMIT=30] -->
+    <string name="settings_orderBy_label">Order articles by:</string>
+    <string name="settings_orderBy_key" translatable="false">orderBy</string>
+    <string name="settings_orderBy_default" translatable="false">@string/settings_orderBy_newest_value</string>
+
+    <!-- Strings For page_results Preference [CHAR LIMIT=30] -->
+    <string name="settings_page_results_label">Page results:</string>
+    <string name="settings_page_results_key" translatable="false">page_results</string>
+    <string name="settings_page_results_default" translatable="false">@string/settings_page_results_default</string>
+
+
+    <string name="settings_section_artanddesign_label">ART AND DESIGN</string>
+    <string name="settings_section_artanddesign_value" translatable="false">artanddesign</string>
+
+    <string name="settings_section_culture_label">CULTURE</string>
+    <string name="settings_section_culture_value" translatable="false">culture</string>
+
+    <string name="settings_section_film_label">FILM</string>
+    <string name="settings_section_film_value" translatable="false">film</string>
+
+    <string name="settings_section_music_label">MUSIC</string>
+    <string name="settings_section_music_value" translatable="false">music</string>
+
+    <string name="settings_section_science_label">SCIENCE</string>
+    <string name="settings_section_science_value" translatable="false">science</string>
+
+    <string name="settings_section_sport_label">SPORT</string>
+    <string name="settings_section_sport_value" translatable="false">sport</string>
+
+    <string name="settings_section_technology_label">TECHNOLOGY</string>
+    <string name="settings_section_technology_value" translatable="false">technology</string>
+
+    <string name="settings_section_world_label">WORLD</string>
+    <string name="settings_section_world_value">WORLD</string>
+
+
 
     <!-- Label for select football option [CHAR LIMIT=20] -->
     <string name="settings_section_football_label">FOOTBALL</string>
@@ -27,6 +69,28 @@
     <!-- Label for select environment option [CHAR LIMIT=20] -->
     <string name="settings_section_environment_label">ENVIRONMENT</string>
     <string name="settings_section_environment_value" translatable="false">environment</string>
-   <!-- URL initial <string name="https://content.guardianapis.com/search?section=football&order-by=newest&show-elements=image&show-fields=byline%2Cthumbnail&page=1&page-size=10&api-key=test"
--->
+
+    <!-- Label for orderBY newest option [CHAR LIMIT=20] -->
+    <string name="settings_orderBy_newest_label">NEWEST</string>
+    <string name="settings_orderBy_newest_value" translatable="false">newest</string>
+
+    <!-- Label for orderBY relevance option [CHAR LIMIT=20] -->
+    <string name="settings_orderBy_relevance_label">RELEVANCE</string>
+    <string name="settings_orderBy_relevance_value" translatable="false">relevance</string>
+
+    <!-- Label for orderBY oldest option [CHAR LIMIT=20] -->
+    <string name="settings_orderBy_oldest_label">OLDEST</string>
+    <string name="settings_orderBy_oldest_value" translatable="false">oldest</string>
+
+    <string name="settings_page_results_10_label">10</string>
+    <string name="settings_page_results_10_value" translatable="false">10</string>
+
+    <string name="settings_page_results_20_label">20</string>
+    <string name="settings_page_results_20_value" translatable="false">20</string>
+
+    <string name="settings_page_results_50_label">50</string>
+    <string name="settings_page_results_50_value" translatable="false">50</string>
+
+
+
 </resources>

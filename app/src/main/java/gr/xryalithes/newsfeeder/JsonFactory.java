@@ -1,5 +1,6 @@
 package gr.xryalithes.newsfeeder;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -90,10 +91,26 @@ public final class JsonFactory {
                 String section = currentObject.getString("sectionName");
                 String title = currentObject.getString("webTitle");
                 String date = currentObject.getString("webPublicationDate");
-                JSONObject fieldsObject = currentObject.getJSONObject("fields");
-                String contributor = fieldsObject.getString("byline");
                 String articleUrl = currentObject.getString("webUrl");
-                String image = fieldsObject.getString("thumbnail");
+                String image=null;
+                String contributor = null;
+
+                if (currentObject.has("fields")) { ////some older articles don't have this field,leading to json parsing error if we try to parse them
+
+                    JSONObject fieldsObject = currentObject.getJSONObject("fields");
+////////////////////IF THERE IS AUTHOR , GET IT///////////////////////////////////////////////////
+                     if (fieldsObject.has("byline")) {
+                         contributor = fieldsObject.getString("byline");
+                     }
+
+                    //////////////IF THERE IS A THUMBNAIL FIELD,  GET IT//////
+
+                    if (fieldsObject.has("thumbnail")) {
+                        image = fieldsObject.getString("thumbnail");
+                    }
+                }
+
+
 //////////////////////////// FORMATTING THE JSON DATE/////////////////////////////
                 // 2018-05-30 T 13:14:07 Z
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'kk:mm:ss'Z'", Locale.UK);

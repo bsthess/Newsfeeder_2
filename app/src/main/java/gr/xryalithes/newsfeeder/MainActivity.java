@@ -18,15 +18,15 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.net.ConnectivityManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Article>> {
 
 
-
     private static final String URL_TO_JSON = "https://content.guardianapis.com/search";
-    private static final String URL_TEST="https://content.guardianapis.com/search?section=football&order-by=newest&show-elements=image&show-fields=byline%2Cthumbnail&page=1&page-size=10&api-key=test";
+    private static final String URL_TEST = "https://content.guardianapis.com/search?section=football&order-by=newest&show-elements=image&show-fields=byline%2Cthumbnail&page=1&page-size=10&api-key=test";
     private static final int ARTICLE_LOADER_ID = 1;
     private ArticleAdapter mAdapter;
     private TextView mEmptyStateTextView;
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         });
     }
+
     //////////////CHECKING IF THE DEVICE IS CONNECTED TO INTERNET AND RETURN A BOOLEAN VALUE////////////////////////////////
     private boolean isConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -77,11 +78,20 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
+
+
+        String  keyword = sharedPrefs.getString(
+                getString(R.string.settings_keyword_key),
+                getString(R.string.settings_keyword_default));
         String sectionSelected = sharedPrefs.getString(
                 getString(R.string.settings_SECTION_key),
                 getString(R.string.settings_section_default));
-
-
+        String orderBySelected = sharedPrefs.getString(
+                getString(R.string.settings_orderBy_key),
+                getString(R.string.settings_orderBy_default));
+        String pageResults = sharedPrefs.getString(
+                getString(R.string.settings_page_results_key),
+                getString(R.string.settings_page_results_default));
 
         // parse breaks apart the URI string that's passed into its parameter
         Uri baseUri = Uri.parse(URL_TO_JSON);
@@ -94,18 +104,21 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // "https://content.guardianapis.com/search?section=football&order-by=newest&
         // show-elements=image&show-fields=byline%2Cthumbnail&page=1&page-size=10&api-key=test"
 
-        uriBuilder.appendQueryParameter("section",sectionSelected);
-        uriBuilder.appendQueryParameter("order-by", "newest");
+        uriBuilder.appendQueryParameter("section", sectionSelected);
+        uriBuilder.appendQueryParameter("order-by", orderBySelected);
         uriBuilder.appendQueryParameter("show-elements", "image");
         uriBuilder.appendQueryParameter("show-fields", "byline,thumbnail");
-        uriBuilder.appendQueryParameter("page","1");
-        uriBuilder.appendQueryParameter("page-size", "10");
+        uriBuilder.appendQueryParameter("page", "1");
+        uriBuilder.appendQueryParameter("page-size", pageResults);
+
+        if (keyword  !=""){uriBuilder.appendQueryParameter("q",keyword);}
         uriBuilder.appendQueryParameter("api-key", "test");
         String urlFinal = uriBuilder.toString();
-        Log.v("url is :",urlFinal);
+        Log.v("url is :", urlFinal);
         return new ArticleLoader(this, urlFinal);
 
     }
+
     @Override
     public void onLoadFinished(Loader<List<Article>> loader, List<Article> articles) {
         mAdapter.clear();

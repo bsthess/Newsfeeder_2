@@ -22,6 +22,7 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
     public ArticleAdapter(Context context, ArrayList<Article> articles) {
         super(context, 0, articles);
     }
+
     @Override
     //////////////////////////GETTING DATA STRINGS FROM CURRENT ARTICLE OBJECT AND SHOW TO VIEWS//////////////
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -39,21 +40,27 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         String image = currentArticle.getImage();
 
 //////////////////  TEXT VIEWS DECLARATION AND SET/////////////////////////////////////////////////////////////
-        TextView sectionTextView =  listItemView.findViewById(R.id.section_text_view);
+        TextView sectionTextView = listItemView.findViewById(R.id.section_text_view);
         sectionTextView.setText(section);
 
-        TextView titleTextView =  listItemView.findViewById(R.id.title_text_view);
+        TextView titleTextView = listItemView.findViewById(R.id.title_text_view);
         titleTextView.setText(title);
 
         TextView dateTextView = listItemView.findViewById(R.id.date_text_view);
         dateTextView.setText(date);
 
-        TextView contributorTextView =  listItemView.findViewById(R.id.contributor_text_view);
-        contributorTextView.setText(contributor);
-
+        TextView contributorTextView = listItemView.findViewById(R.id.contributor_text_view);
+        if (contributor == null) {
+            contributorTextView.setText(R.string.the_guardian);
+        } else {
+            contributorTextView.setText(contributor);
+        }
         ImageView imageTextView = listItemView.findViewById(R.id.imageFromUrl);
-        Picasso.get().load(image).resize(150,100).into(imageTextView);
-
+        if (image == null) {
+            imageTextView.setImageResource(R.drawable.the_guardian);
+        } else {
+            Picasso.get().load(image).resize(150, 100).into(imageTextView);
+        }
         return listItemView;
     }
 

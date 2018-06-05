@@ -4,11 +4,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/settings_title">
 
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_keyword_default"
+        android:inputType="textAutoCorrect"
+        android:key="@string/settings_keyword_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_keyword_label" />
+
     <ListPreference
         android:defaultValue="@string/settings_section_default"
         android:entries="@array/settings_section_labels"
         android:entryValues="@array/settings_section_values"
         android:key="@string/settings_SECTION_key"
         android:title="@string/settings_SECTION_label" />
-
+    <ListPreference
+        android:defaultValue="@string/settings_orderBy_default"
+        android:entries="@array/settings_orderBy_labels"
+        android:entryValues="@array/settings_orderBy_values"
+        android:key="@string/settings_orderBy_key"
+        android:title="@string/settings_orderBy_label" />
+    <ListPreference
+        android:defaultValue="@string/settings_page_results_default"
+        android:entries="@array/settings_page_results_labels"
+        android:entryValues="@array/settings_page_results_values"
+        android:key="@string/settings_page_results_key"
+        android:title="@string/settings_page_results_label" />
 </PreferenceScreen>
