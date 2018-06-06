@@ -28,7 +28,7 @@ public final class JsonFactory {
 
     private JsonFactory() {
     }
-/////////////METHOD FOR CREATING AN URL OBJECT FROM A STRING/////////////////////////////
+    /////////////METHOD FOR CREATING AN URL OBJECT FROM A STRING/////////////////////////////
     private static URL makeUrl(String stringUrl) {
         URL url = null;
         try {
@@ -38,7 +38,7 @@ public final class JsonFactory {
         }
         return url;
     }
-///////////CONNECTING........./////////////////////////////////////////////////////////////
+    ///////////CONNECTING........./////////////////////////////////////////////////////////////
     private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
         HttpURLConnection urlConnection = null;
@@ -65,7 +65,7 @@ public final class JsonFactory {
         }
         return jsonResponse;// <-------THIS STRING IS THE FINAL RESULT///////////////////
     }
-/////////THIS METHOD CREATES THE STRING FROM THE DOWNLOADED RAW DATA///////////////////////////////////////////
+    /////////THIS METHOD CREATES THE STRING FROM THE DOWNLOADED RAW DATA///////////////////////////////////////////
     private static String readFromStream(InputStream inputStream) throws IOException {
         StringBuilder output = new StringBuilder();
         if (inputStream != null) {
@@ -79,7 +79,7 @@ public final class JsonFactory {
         }
         return output.toString();
     }
-////////  HERE WE PARSE THE JSON FILE (STRING) AND GET THE VALUES FOR SHOWING TO USER////////////////
+    ////////  HERE WE PARSE THE JSON FILE (STRING) AND GET THE VALUES FOR SHOWING TO USER////////////////
     public static ArrayList<Article> extractDataFromJson(String jsonResponse) {
         ArrayList<Article> articles = new ArrayList<>();
         try {
@@ -92,25 +92,19 @@ public final class JsonFactory {
                 String title = currentObject.getString("webTitle");
                 String date = currentObject.getString("webPublicationDate");
                 String articleUrl = currentObject.getString("webUrl");
-                String image=null;
+                String image = null;
                 String contributor = null;
-
-                if (currentObject.has("fields")) { ////some older articles don't have this field,leading to json parsing error if we try to parse them
-
+                if (currentObject.has("fields")) { ////some older articles don't have this field,leading to json parsing error if we try to parse them.So we much check.
                     JSONObject fieldsObject = currentObject.getJSONObject("fields");
 ////////////////////IF THERE IS AUTHOR , GET IT///////////////////////////////////////////////////
-                     if (fieldsObject.has("byline")) {
-                         contributor = fieldsObject.getString("byline");
-                     }
-
+                    if (fieldsObject.has("byline")) {
+                        contributor = fieldsObject.getString("byline");
+                    }
                     //////////////IF THERE IS A THUMBNAIL FIELD,  GET IT//////
-
                     if (fieldsObject.has("thumbnail")) {
                         image = fieldsObject.getString("thumbnail");
                     }
                 }
-
-
 //////////////////////////// FORMATTING THE JSON DATE/////////////////////////////
                 // 2018-05-30 T 13:14:07 Z
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'kk:mm:ss'Z'", Locale.UK);
@@ -133,7 +127,8 @@ public final class JsonFactory {
         }
         return articles;
     }
-///////// THE MAIN METHOD THAT TRIGGERS ALL  (1.MAKING URL 2. CONNECT 3.EXTRACT DATA 4.RETURN A POPULATED ARRAYLIST!!/////
+
+    ///////// THE MAIN METHOD THAT TRIGGERS ALL  (1.MAKING URL 2. CONNECT 3.EXTRACT DATA 4.RETURN A POPULATED ARRAYLIST!!/////
     public static List<Article> fetchArticleData(String requestUrl) {
         URL url = makeUrl(requestUrl);
         try {

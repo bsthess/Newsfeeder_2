@@ -3,9 +3,31 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:dialogTheme">@style/dialog_light</item>
+        <item name="android:alertDialogTheme">@style/dialog_light</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="PreferenceScreen" parent="Theme.AppCompat">
+        <item name="android:dialogTheme">@style/dialog_light</item>
+        <item name="android:alertDialogTheme">@style/dialog_light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#ff0000</item>
+        <item name="android:windowBackground">@color/lightBlue</item>
+        <item name="android:textColorHint">@color/Orange</item>
+
+    </style>
+
+    <style name="dialog_light" parent="Theme.AppCompat.Light.Dialog">
+        <item name="@android:windowBackground">@color/lightBlue</item>
+        <item name="@android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColorAlertDialogListItem">@color/Orange</item>
+        <item name="android:textStyle">bold|italic</item>
+
+    </style>
 </resources>

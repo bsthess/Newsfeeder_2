@@ -30,19 +30,15 @@ public class Article {
 
         return mContributor;
     }
-
     public String getTitle() {
-
         return mTitle;
     }
     public String getDatePublished() {
         return mDatePublished;
     }
-
     public String getSection() {
         return mSection;
     }
-
     public String getUrl() {
         return mArticleUrl;
     }

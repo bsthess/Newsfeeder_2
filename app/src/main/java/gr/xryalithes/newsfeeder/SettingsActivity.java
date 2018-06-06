@@ -13,20 +13,17 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
     }
-
     public static class EarthquakePreferenceFragment
             extends PreferenceFragment implements Preference.OnPreferenceChangeListener{
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings_main);
-
             Preference keyword = findPreference(getString(R.string.settings_keyword_key));
             bindPreferenceSummaryToValue(keyword);
             Preference section = findPreference(getString(R.string.settings_SECTION_key));
@@ -36,13 +33,9 @@ public class SettingsActivity extends AppCompatActivity {
             Preference pageResults = findPreference(getString(R.string.settings_page_results_key));
             bindPreferenceSummaryToValue(pageResults);
         }
-
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             String stringValue = newValue.toString();
-
-
-
             if (preference instanceof ListPreference) {
                 ListPreference listPreference = (ListPreference) preference;
                 int prefIndex = listPreference.findIndexOfValue(stringValue);
@@ -53,7 +46,6 @@ public class SettingsActivity extends AppCompatActivity {
                             } else {
                                 preference.setSummary(stringValue);
                             }
-
             return true;
         }
         private void bindPreferenceSummaryToValue(Preference preference) {
@@ -62,8 +54,5 @@ public class SettingsActivity extends AppCompatActivity {
             String preferenceString = preferences.getString(preference.getKey(), "");
             onPreferenceChange(preference, preferenceString);
         }
-
-
-
     }
 }

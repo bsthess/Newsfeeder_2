@@ -4,28 +4,32 @@
     <string name="no_internet">NO INTERNET CONNECTION</string>
     <string name="article_image">ARTICLE IMAGE</string>
     <string name="settings_menu_item">Settings</string>
-    <string name="settings_title">Article Settings</string>
+    <string name="settings_title">Settings</string>
     <string name="the_guardian">The Guardian</string>
+
     <!--Strings for keyword Preference -->
-    <string name="settings_keyword_label">SEARCH FOR A KEYWORD</string>
+    <string name="settings_keyword_label">Search for a keyword</string>
     <string name="settings_keyword_key" translatable="false">keyword</string>
-    <string name="settings_keyword_default" translatable="false"></string>
+    <string name="settings_keyword_default" translatable="false">android</string>
 
     <!-- Strings For section Preference [CHAR LIMIT=30] -->
     <string name="settings_SECTION_label">Select news section</string>
     <string name="settings_SECTION_key" translatable="false">section</string>
-    <string name="settings_section_default" translatable="false">@string/settings_section_world_value</string>
+    <string name="settings_section_default" translatable="false">@string/settings_section_technology_value</string>
 
     <!-- Strings For orderBy Preference [CHAR LIMIT=30] -->
     <string name="settings_orderBy_label">Order articles by:</string>
     <string name="settings_orderBy_key" translatable="false">orderBy</string>
-    <string name="settings_orderBy_default" translatable="false">@string/settings_orderBy_newest_value</string>
+    <string name="settings_orderBy_default" translatable="false">@string/settings_orderBy_relevance_value</string>
 
     <!-- Strings For page_results Preference [CHAR LIMIT=30] -->
     <string name="settings_page_results_label">Page results:</string>
     <string name="settings_page_results_key" translatable="false">page_results</string>
-    <string name="settings_page_results_default" translatable="false">@string/settings_page_results_default</string>
+    <string name="settings_page_results_default" translatable="false">@string/settings_page_results_10_value</string>
 
+
+    <string name="settings_section_all_label">ALL</string>
+    <string name="settings_section_all_value" translatable="false">all</string>
 
     <string name="settings_section_artanddesign_label">ART AND DESIGN</string>
     <string name="settings_section_artanddesign_value" translatable="false">artanddesign</string>
@@ -50,8 +54,6 @@
 
     <string name="settings_section_world_label">WORLD</string>
     <string name="settings_section_world_value">WORLD</string>
-
-
 
     <!-- Label for select football option [CHAR LIMIT=20] -->
     <string name="settings_section_football_label">FOOTBALL</string>

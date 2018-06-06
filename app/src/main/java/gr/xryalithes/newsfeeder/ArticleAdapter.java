@@ -50,12 +50,14 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         dateTextView.setText(date);
 
         TextView contributorTextView = listItemView.findViewById(R.id.contributor_text_view);
+        ///////////IF JSON FIELD RETURNS NO AUTHOR, THEN SET A DEFAULT AUTHOR///////////////////////
         if (contributor == null) {
             contributorTextView.setText(R.string.the_guardian);
         } else {
             contributorTextView.setText(contributor);
         }
         ImageView imageTextView = listItemView.findViewById(R.id.imageFromUrl);
+        ///////////////////IF JSON FILE RETURNS NO IMAGE, SET A GUARDIAN LOGO IMAGE//////////////////
         if (image == null) {
             imageTextView.setImageResource(R.drawable.the_guardian);
         } else {

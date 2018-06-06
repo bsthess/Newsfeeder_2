@@ -7,15 +7,15 @@
     android:layout_height="@dimen/layoutHeight">
 
     <ImageView
-
+        android:layout_marginLeft="@dimen/margin5"
         android:id="@+id/imageFromUrl"
         android:layout_width="@dimen/imageWidth"
         android:layout_height="@dimen/imageHeight"
-        android:layout_marginRight="@dimen/margin5"
-        android:src="@drawable/ball" />
+        android:layout_margin="@dimen/margin5"
+        android:src="@drawable/the_guardian" />
 
     <TextView
-
+        android:layout_marginLeft="@dimen/margin5"
         android:id="@+id/section_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,22 +32,24 @@
         android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/articleHeight"
+        android:layout_above="@+id/contributor_text_view"
         android:layout_alignLeft="@+id/section_text_view"
         android:layout_below="@+id/section_text_view"
-        android:maxLines="2"
+        android:layout_marginRight="@dimen/margin5"
+        android:maxLines="3"
         android:textColor="@color/DarkBlue"
-        android:textSize="16sp"
+        android:textSize="12sp"
         tools:text="ARticle title ...." />
 
     <TextView
         android:id="@+id/contributor_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/imageFromUrl"
-        android:layout_alignLeft="@id/title_text_view"
-        android:layout_below="@id/title_text_view"
-        android:layout_margin="@dimen/margin5"
-        android:layout_marginTop="@dimen/margin5"
+        android:layout_alignLeft="@+id/title_text_view"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/title_text_view"
+        android:layout_marginBottom="@dimen/margin5"
+        android:layout_marginRight="@dimen/margin5"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="10sp"
         android:textStyle="italic|bold"
@@ -57,10 +59,11 @@
         android:id="@+id/date_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/title_text_view"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/title_text_view"
-        android:layout_marginRight="@dimen/margin5"
-        android:layout_marginTop="@dimen/margin5"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="10sp"
         android:textStyle="bold|italic"

@@ -6,4 +6,9 @@
     <color name="DarkBlue">#311B92</color>
     <color name="Orange">#EF6C00</color>
     <color name="BlueGray">#EEEEEE</color>
+    <color name="black">#FF000000</color>
+    <color name="whitegrey">#FFF2F2F2</color>
+    <color name="lightBlue">#90CAF9</color>
+    <color name="blue">#1E88E5</color>
+    <color name="yellow">#FFFF00</color>
 </resources>
